@@ -16,25 +16,27 @@ body {
 
 /* Body light or darker themes */
 .standard {
-    background-image: linear-gradient(100deg, #575656, #062e3f);
+    background-image: linear-gradient(0deg, #F00 0%, #FF0 100%);
     color: #ffdfdb;
     transition: 0.3s linear;
     overflow: hidden;
 }
 
 .light {
-    background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
-    color: #1a150e;
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #f00), color-stop(100%, #ff0));
+    color: #FFFF00;
     transition: 0.3s linear;
 }
 
 .darker {
-    background-image: linear-gradient(100deg, #001214, #001f29);
-    color: white;
+    background-image: linear-gradient(to right bottom, #F00 0%, #FF0 100%);
+    color: #00FF00;
     transition: 0.3s linear;
 }
 
-#header, #form, #datetime {
+#header,
+#form,
+#datetime {
     margin: 0 1rem;
     min-height: 10vh;
     width: 100%;
@@ -68,7 +70,7 @@ body {
     width: 35px;
 }
 
-.theme-selector:hover { 
+.theme-selector:hover {
     box-shadow: white 0 0 8px;
     cursor: pointer;
 }
@@ -93,41 +95,56 @@ body {
 #title {
     border-right: solid 3px rgba(0, 0, 0, 0.75);
     white-space: pre;
-    overflow: hidden;     
+    overflow: hidden;
     letter-spacing: 0.20rem;
     margin-top: 50px;
     margin-bottom: 20px;
     max-width: 480px;
-  }
-  
-  /* Animation */
+}
+
+/* Animation */
 #title {
-    animation: animated-text 2s steps(11,end) 0.5s 1 normal both,
-        animated-cursor 750ms steps(11,end) infinite;
-  }
+    animation: animated-text 2s steps(11, end) 0.5s 1 normal both,
+        animated-cursor 750ms steps(11, end) infinite;
+}
 
 #title.darker-title {
-    animation: animated-text 2s steps(11,end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(11,end) infinite;
+    animation: animated-text 2s steps(11, end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(11, end) infinite;
 }
-  
-  /* text animation */
-  
-  @keyframes animated-text{
-    from{width: 0%;}
-    to{width: 480px;}
-  }
-  
-  /* cursor animations */
-  
-  @keyframes animated-cursor{
-    from{border-right-color: rgba(0, 0, 0, 0.75);}
-    to{border-right-color: transparent;}
-  }
 
-  @keyframes darker-animated-cursor {
-    from{border-right-color: #01394c;}
-    to{border-right-color: transparent;}
-  }
+/* text animation */
+
+@keyframes animated-text {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 480px;
+    }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+    from {
+        border-right-color: rgba(0, 0, 0, 0.75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes darker-animated-cursor {
+    from {
+        border-right-color: #01394c;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
 
 form {
     display: flex;
@@ -196,7 +213,7 @@ form input.darker-input:hover {
 
 button {
     border: none;
-    outline: none; 
+    outline: none;
     transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
 }
 
@@ -274,26 +291,28 @@ form button {
 }
 
 .light-todo {
-    background-color:#AEB1B4;
+    background-color: #AEB1B4;
 }
 
 .darker-todo {
     background-color: #01394c;
 }
 
-.todo li{
+.todo li {
     padding: 7px;
     /* word-wrap: break-word; */
     /* flex-wrap: wrap; */
     font-size: 20px;
-    flex: 1; /* To push the trash and the check button to the right */
+    flex: 1;
+    /* To push the trash and the check button to the right */
     border-radius: 30px;
 
     /* wraps the links */
     overflow-wrap: anywhere;
 }
 
-.check-btn, .delete-btn {
+.check-btn,
+.delete-btn {
     font-size: 19px;
     cursor: pointer;
     width: 2em;
@@ -306,7 +325,8 @@ form button {
     padding: 0rem 0.5rem;
 }
 
-.fa-trash, .fa-check { 
+.fa-trash,
+.fa-check {
     pointer-events: none;
 }
 
@@ -337,9 +357,9 @@ form button {
     }
 
     #title {
-        animation: 
-            animated-text 3s steps(16,end) 0.5s 1 normal both,
-            animated-cursor 750ms steps(16,end) infinite;
+        animation:
+            animated-text 3s steps(16, end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(16, end) infinite;
         margin-bottom: 10px;
         margin-top: 30px;
         max-width: 330px;
@@ -352,9 +372,9 @@ form button {
     }
 
     #title {
-        animation: 
-            animated-text 3.5s steps(16,end) 0.5s 1 normal both,
-            animated-cursor 750ms steps(16,end) infinite;
+        animation:
+            animated-text 3.5s steps(16, end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(16, end) infinite;
         max-width: 255px;
     }
 }
@@ -374,7 +394,8 @@ form button {
         margin-top: 15px;
         width: 50%;
     }
-    form > button.light-button {
+
+    form>button.light-button {
         box-shadow: 0 0 5px lightgray;
     }
 }
